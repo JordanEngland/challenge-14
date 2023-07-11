@@ -1,0 +1,23 @@
+<div class="post">
+  <h2>{{post.title}}</h2>
+  <p>{{post.content}}</p>
+  <p>Created on {{post.createdAt}}</p>
+</div>
+
+<div class="comments">
+  <h3>Comments</h3>
+  {{#each comments}}
+    <div class="comment">
+      <p>{{content}}</p>
+      <p>Posted by {{User.username}} on {{createdAt}}</p>
+    </div>
+  {{else}}
+    <p>No comments found.</p>
+  {{/each}}
+</div>
+
+<form action="/comments" method="POST">
+  <input type="hidden" name="postId" value="{{post.id}}">
+  <textarea name="content" placeholder="Leave a comment"></textarea>
+  <button type="submit">Submit</button>
+</form>

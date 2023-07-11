@@ -1,0 +1,10 @@
+{{!-- Loop over the posts and render them --}}
+{{#each posts}}
+  <div class="post">
+    <h2>{{title}}</h2>
+    <p>{{content}}</p>
+    <p>Created on {{createdAt}}</p>
+  </div>
+{{else}}
+  <p>No posts found.</p>
+{{/each}}
