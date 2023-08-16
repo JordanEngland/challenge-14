@@ -1,5 +1,5 @@
 // controllers/homeController.js
-const { Post } = require('../models');
+const { Post } = require('./models/post');
 
 const homeController = {
   async index(req, res) {
